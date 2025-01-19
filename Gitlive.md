@@ -15,7 +15,7 @@ nothing added to commit but untracked files present (use "git add" to track)
 ```
 
 After adding the files to be commited, git status will show the files under tracked files.
-````
+```
 [root@replica project]# git add index.js
 [root@replica project]# git status
 # On branch master
