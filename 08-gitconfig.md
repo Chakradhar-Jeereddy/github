@@ -43,8 +43,6 @@ git config [--local|--global] -e
         helper = cache
 ```
 
-
-```
 Creating git alias
 
 ```
