@@ -44,3 +44,42 @@ git config [--local|--global] -e
 ```
 
 
+```
+Creating git alias
+
+```
+[root@replica project]# git config alias.st status
+[root@replica project]# git st
+# HEAD detached at 4e35dda
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#       modified:   sample
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+Git config get option and unset option
+```
+[root@replica project]# git config --unset user.name
+[root@replica project]# git config --unset user.email
+
+[root@replica project]# git config -l --local
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+alias.st=status
+
+           <command> [<args>]
+# git config --global user.name
+chakradhar
+# git config --global user.email
+chakrareddt@gmail.com
+```
+
+
+
+
+
