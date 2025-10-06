@@ -24,7 +24,7 @@ F) Which will be shared server where your team can collaborate, like github or b
 
 Collaboration in Git is a two-way exchange.
 To integrate your teammates work, use "git pull", which fetches changes from the remote repository and merges them into your local repository.
-
+```
 ```
 git pull = git fetch + git merge
 
@@ -36,9 +36,6 @@ git checkout - It alows to switch between different branches.
 Git branching - Allows you to diverge from the main codebase to develop a new feature withot impacting the main code. 
 
 ```
-
-
-"
 
 
 
