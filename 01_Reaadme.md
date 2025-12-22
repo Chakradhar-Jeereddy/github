@@ -36,9 +36,136 @@ git checkout - It alows to switch between different branches.
 Git branching - Allows you to diverge from the main codebase to develop a new feature withot impacting the main code. 
 
 ```
+Main flow GIT
+======
+repo creation
+add the files to staging area
+commit to local repo
+push to central repo
 
+init the repo
+set the main branch 
+add origin
+add fles to staging, commit to local, push to central
 
+clone
+pull the changes
 
+prod code points to -> main branch
+
+we don't develop directly in main branches
+
+create new branch, do the development here, test it, finally send to main branch
+
+branches
+pull request
+merge
+rebase
+conflicts
+branching strategy
+
+create a branch
+do the development there
+	run cicd
+if success then raise a PR to main branch
+
+git checkout -b <branch-name>
+
+Merge commit
+============
+
+merge commit is a special commit that is extra commit created, it will have 2 parents
+merge commit preserves the history
+
+Merge vs Rabase
+===============
+1. Merge create extra commit called merge commit, that has 2 parents so it preserves history
+2. Rebase does not not create extra commit, it rewrites the history by changing the commit IDS. It has linear history
+
+If you are working on shared branches go with merge, if you are working on private branches or local branches go with rebase
+
+How do we get conflicts?How to resolve them?
+=======
+2 persons started egg-dosa.
+
+if Git finds diff code in the same line, it can't understand which one to keep, so it creates conflicts. so the persons who coded to conflicts should sit together and decide which one to keep and which one to discard.
+
+Branching Strategy
+==================
+git model
+github model
+trunk based
+
+main develop release bugs feature hotfix -> git model
+main and feature -> github/feature branching model
+main -> trunk based
+
+long lived branches
+short lived branches
+
+main develop
+feature hotfix bugfix release
+
+main
+
+develop
+========
+source: main
+all development are reflected here...
+
+short-lived
+========
+feature
+
+source: develop
+target: develop through PR
+
+deploy into DEV environment, everything is working as expected in DEV environment
+
+release
+======
+source: develop
+QA, UAT -> bugs
+you can create a simple bug fix branches. do the changes and raise PR to release branch
+
+all bugs are fixed
+
+you can go for PROD from here...
+
+target: main -> PROD and develop tag them
+
+hotfix
+=======
+source: main
+
+hotfix/bug-1234R -> do the development changes deploy to DEV
+merge back to main and release into PROD
+
+target: main and development
+
+this is suitable waterfall model kind of development, if your software has multiple versions supported and multiple devices
+
+GitHub/feature branching Model
+============
+main and feature
+
+a branch is handled by only one person.
+
+a feature is created from main branch, do the development. CI pipeline will run
+	clone build scans unit testing
+merge to main branch -> develop, uat, sit, prod
+
+same code goes to all environments -> whatever is tested in DEV should go all the way to PROD. only configuration changes
+
+dev uat qa prod -> dont create branches for environments
+
+Git Reset
+==========
+Changes undone
+
+1. soft -> changes will  come to staging environment
+2. mixed
+3. hard
 
 
 
