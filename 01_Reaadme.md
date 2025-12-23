@@ -227,8 +227,63 @@ git stash # Brings back the uncommmited changes
 git cherry-pick
 ============
 if you are developing some feature, but a part of it already developed earlier instead of doing everything from the scratch you can cherry pick the changes from previous commits
+```
+git log main
+commit c5fbb8ba61772bfbf3691dae28b178194a25d065
+Author: chakradhar06 <chakradhar06@gmail.com>
+Date:   Mon Dec 22 16:41:51 2025 -0500
+
+    commbined commits
+
+commit 0e08b3feb0d23ed6f613b2ada1a926404061638b (origin/master, origin/HEAD)
+Author: chakradhar06 <chakradhar06@gmail.com>
+Date:   Mon Dec 22 16:12:15 2025 -0500
+
+git checkout feature
+git cherry-pick c5fbb8ba61772bfbf3691dae28b178194a25d065
+1 file changed, 2 insertions(+)
+git log  # only the changes picked will come from main and a new commit id is created.
+```
+
+Check details of a commit
+=======================
+git show <commit id>
+
+# Restore deleted commit
+=====================
+approach 1
+=========
+```
+git reset --hard <commit> # This will delete commit, changes from workspace/staging/local repo.
+git reflog    #it will show the deleted commits as well.
+git show <commit id>   # Shows details of the commit, so we can pick the right commit
+
+git checkout -b restore-branch <commit id>
+git checkout freature-branch
+git merge restore-branch
+git checkout -d restore branch.
+```
+approach 2
+==========
+```
+git reset --hard <commit> # This will delete commit, changes from workspace/staging/local repo.
+git reflog    #it will show the deleted commits as well.
+git show <commit id>   # Shows details of the commit, so we can pick the right commit
+
+git checkout feature-branch
+git reset --hard <deleted commit id> (Make sure you don't use this appoach in shared remote/local branches
+```
+
+Conflicts 
+==========
+2 persons working on same branch
+git finds conflict if both persions updated the same line in the code.
+And it can't decide which one to remove or keep. It has to be resolved through human intervention.
+Edit the files and remove the conflicts, save and commit.
 
 
 
+Git tagging
+===========
 
 
