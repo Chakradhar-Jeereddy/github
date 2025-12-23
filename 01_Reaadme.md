@@ -82,7 +82,7 @@ Merge vs Rabase
 1. Merge create extra commit called merge commit, that has 2 parents so it preserves history
 2. Rebase does not not create extra commit, it rewrites the history by changing the commit IDS. It has linear history
 
-If you are working on shared branches go with merge, if you are working on private branches or local branches go with rebase
+If you are working on shared branches go with merge, if you are working on private branches or local branches go with rebase (all commits come on my name).
 
 How do we get conflicts?How to resolve them?
 =======
@@ -159,23 +159,12 @@ same code goes to all environments -> whatever is tested in DEV should go all th
 
 dev uat qa prod -> dont create branches for environments
 
-Git Reset
-==========
-Changes undone
-
-1. soft -> changes will  come to staging environment
-2. mixed
-3. hard
-
 * merge
 * rebase
 * branching strategy
 * PR
 
-Reset and revert -> undo the changes done.
-==========================================
-
-Reset -> commits will be deleted, it is only suitable for private branches or local commits
+Reset -> commits will be deleted, it is only suitable for private branches or local commits.
 =====
 soft, mixed, hard
 ```
@@ -192,6 +181,7 @@ revert -> will not delete any commit, we can correct the changes using revert co
 git revert <commit id>
 As to make changes in files and commit. It creates a new commit with new corrections and preseve the previous commits.
 ```
+
 git squash/interactive rebase
 ===========
 100 commits -> squash them into single commit
