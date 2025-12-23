@@ -271,9 +271,12 @@ git finds conflict if both persions updated the same line in the code.
 And it can't decide which one to remove or keep. It has to be resolved through human intervention.
 Edit the files and remove the conflicts, save and commit.
 
-
-
 Git tagging
 ===========
+ git tag v0 c5fbb8ba61772bfbf3691dae28b178194a25d065  # adds tag to the commit id
+ git tag v2                                           # adds tag to the current commid id.
+ git tag v1 0e08b3feb0d23ed6f613b2ada1a926404061638b
+ git reset --hard v0    #rollback changes to tag v0
+ git show v0  # shows the details of commit id attached to the tag.
 
 
