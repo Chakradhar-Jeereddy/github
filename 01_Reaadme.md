@@ -167,6 +167,68 @@ Changes undone
 2. mixed
 3. hard
 
+* merge
+* rebase
+* branching strategy
+* PR
+
+Reset and revert -> undo the changes done.
+==========================================
+
+Reset -> commits will be deleted, it is only suitable for private branches or local commits
+=====
+soft, mixed, hard
+```
+Never use in shared branches as you will lose the commit ids, it deletes the commit id.
+git reset --soft <commit id>    # Undo changes from local repo and keeps it in staging area
+git reset --hard <commit id>    # Undo changes from local repo, staging area and workspace.
+git reset <commit id>           # Default is mixed mode which undo changes from local repo and staging area.
+```
+commit -> it is like promise
+
+revert -> will not delete any commit, we can correct the changes using revert commit, old commits still will be there. Useful for shared/remote branches
+======
+```
+git revert <commit id>
+As to make changes in files and commit. It creates a new commit with new corrections and preseve the previous commits.
+```
+git squash/interactive rebase
+===========
+100 commits -> squash them into single commit
+```
+git rebase -i <where-to-pick>
+# The file opens.
+select the commit id to pick
+pick 69afbb1b3981428b2da8547856ad08b036eafad7 (and save the file)
+
+Sqash
+
+git rebase -i 543e0f5
+pick 378b745 # add oil
+squash f4254c7 # add batter
+s e3a12d8 # reverted
+s 543e0f5 # picked cherry
+=> save
+git rebase --continue
+Resove merge conflicts in the file, save
+git add .
+put commit message and save
+```
+git stash
+=========
+while we are working on some branch, suddenly an emergency defect came in production, so we need to move and create hotfix branch. we can stash uncommited changes changes complete hotfix, comeback to our branch and pop the changes
+```
+git stash
+git checkout hotfix
+git checkout feature
+git merge hotfix
+git stash # Brings back the uncommmited changes
+```
+git cherry-pick
+============
+if you are developing some feature, but a part of it already developed earlier instead of doing everything from the scratch you can cherry pick the changes from previous commits
+
+
 
 
 
